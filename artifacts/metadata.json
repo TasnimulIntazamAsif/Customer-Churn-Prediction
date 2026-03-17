@@ -1,0 +1,223 @@
+{
+  "project_title": "ACCURATE-Churn: An Actionable, Calibrated, and Uncertainty-Aware Ensemble Framework for Telecom Customer Churn Prediction and Retention Decision Support",
+  "app_title": "ACCURATE-Churn Studio",
+  "final_threshold": 0.23,
+  "uncertainty_thresholds": {
+    "confident_churn_min": 0.7,
+    "confident_non_churn_max": 0.1
+  },
+  "business_assumptions": {
+    "intervention_cost": 1.0,
+    "retention_benefit_if_true_churner": 5.0
+  },
+  "raw_input_columns": [
+    "customerID",
+    "gender",
+    "SeniorCitizen",
+    "Partner",
+    "Dependents",
+    "tenure",
+    "PhoneService",
+    "MultipleLines",
+    "InternetService",
+    "OnlineSecurity",
+    "OnlineBackup",
+    "DeviceProtection",
+    "TechSupport",
+    "StreamingTV",
+    "StreamingMovies",
+    "Contract",
+    "PaperlessBilling",
+    "PaymentMethod",
+    "MonthlyCharges",
+    "TotalCharges"
+  ],
+  "original_categorical_cols": [
+    "gender",
+    "Partner",
+    "Dependents",
+    "PhoneService",
+    "PaperlessBilling",
+    "MultipleLines",
+    "InternetService",
+    "OnlineSecurity",
+    "OnlineBackup",
+    "DeviceProtection",
+    "TechSupport",
+    "StreamingTV",
+    "StreamingMovies",
+    "Contract",
+    "PaymentMethod"
+  ],
+  "original_numeric_cols": [
+    "SeniorCitizen",
+    "tenure",
+    "MonthlyCharges",
+    "TotalCharges"
+  ],
+  "final_categorical_cols": [
+    "gender",
+    "Partner",
+    "Dependents",
+    "PhoneService",
+    "PaperlessBilling",
+    "MultipleLines",
+    "InternetService",
+    "OnlineSecurity",
+    "OnlineBackup",
+    "DeviceProtection",
+    "TechSupport",
+    "StreamingTV",
+    "StreamingMovies",
+    "Contract",
+    "PaymentMethod",
+    "internetservice_x_techsupport",
+    "seniorcitizen_x_dependents",
+    "contract_x_paymentmethod",
+    "tenure_bin",
+    "monthly_charge_bin",
+    "total_charge_bin"
+  ],
+  "final_numeric_cols": [
+    "SeniorCitizen",
+    "tenure",
+    "MonthlyCharges",
+    "TotalCharges",
+    "avg_charge_per_month",
+    "charge_tenure_ratio",
+    "high_monthly_charge_flag",
+    "low_tenure_flag",
+    "long_tenure_flag",
+    "service_count",
+    "support_service_count",
+    "streaming_service_count",
+    "internet_dependent_flag",
+    "no_support_bundle_flag",
+    "contract_risk_score",
+    "payment_friction_score",
+    "paperless_auto_payment_mismatch",
+    "month_to_month_high_risk_flag",
+    "tenure_x_monthlycharges",
+    "support_bundle_x_monthlycharges",
+    "customer_segment_kmeans"
+  ],
+  "cluster_features": [
+    "SeniorCitizen",
+    "tenure",
+    "MonthlyCharges",
+    "TotalCharges",
+    "avg_charge_per_month",
+    "charge_tenure_ratio",
+    "service_count",
+    "support_service_count",
+    "streaming_service_count",
+    "contract_risk_score",
+    "payment_friction_score",
+    "tenure_x_monthlycharges",
+    "support_bundle_x_monthlycharges"
+  ],
+  "categorical_options": {
+    "gender": [
+      "Female",
+      "Male"
+    ],
+    "Partner": [
+      "No",
+      "Yes"
+    ],
+    "Dependents": [
+      "No",
+      "Yes"
+    ],
+    "PhoneService": [
+      "No",
+      "Yes"
+    ],
+    "PaperlessBilling": [
+      "No",
+      "Yes"
+    ],
+    "MultipleLines": [
+      "No",
+      "No phone service",
+      "Yes"
+    ],
+    "InternetService": [
+      "DSL",
+      "Fiber optic",
+      "No"
+    ],
+    "OnlineSecurity": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "OnlineBackup": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "DeviceProtection": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "TechSupport": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "StreamingTV": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "StreamingMovies": [
+      "No",
+      "No internet service",
+      "Yes"
+    ],
+    "Contract": [
+      "Month-to-month",
+      "One year",
+      "Two year"
+    ],
+    "PaymentMethod": [
+      "Bank transfer (automatic)",
+      "Credit card (automatic)",
+      "Electronic check",
+      "Mailed check"
+    ]
+  },
+  "numeric_defaults": {
+    "SeniorCitizen": {
+      "min": 0,
+      "max": 1,
+      "default": 0
+    },
+    "tenure": {
+      "min": 0,
+      "max": 72,
+      "default": 12
+    },
+    "MonthlyCharges": {
+      "min": 0.0,
+      "max": 200.0,
+      "default": 70.0
+    },
+    "TotalCharges": {
+      "min": 0.0,
+      "max": 10000.0,
+      "default": 840.0
+    }
+  },
+  "interventions": [
+    "contract_to_one_year",
+    "contract_to_two_year",
+    "add_tech_support",
+    "add_online_security",
+    "switch_payment_auto",
+    "reduce_monthly_charge_10pct",
+    "bundle_support_security"
+  ]
+}

@@ -1,0 +1,14 @@
+ACCURATE-Churn export bundle
+
+Contents:
+- metadata.json: schema, thresholds, options, and app configuration
+- saved_assets.json: saved model file names
+- models/: deployable model and preprocessing artifacts
+- reports/: CSV/JSON outputs from the experiment
+- figures/: paper-ready figures
+
+Recommended app usage:
+1. Download this ZIP from Kaggle
+2. Extract it into your VS Code repo under:
+   artifacts/
+3. Run the Streamlit app using the provided project files
