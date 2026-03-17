@@ -9,7 +9,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent
 ARTIFACTS_DIR = PROJECT_ROOT / "artifacts"
 
 st.set_page_config(
-    page_title="ACCURATE-Churn Studio",
+    page_title="Cynthia's ACCURATE-Churn Prediction System",
     page_icon=":chart_with_downwards_trend:",
     layout="wide",
 )
@@ -23,7 +23,7 @@ def load_predictor() -> AccurateChurnPredictor:
 try:
     predictor = load_predictor()
 except PredictorSetupError as exc:
-    st.title("ACCURATE-Churn Studio")
+    st.title("Cynthia's ACCURATE-Churn Prediction System")
     st.error("The app could not load its runtime dependencies or model artifacts.")
     st.code(str(exc))
     st.markdown(
