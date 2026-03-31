@@ -13,6 +13,16 @@ ACCURATE-Churn Studio is a Streamlit application for running the deployed infere
 - Shows local SHAP driver summaries
 - Simulates retention interventions and ranks them by estimated probability reduction
 
+<img width="2247" height="1312" alt="Screenshot 2026-03-31 125614" src="https://github.com/user-attachments/assets/11d3352c-de1e-4cbf-b21e-b85baf1a47ea" />
+
+
+<img width="2141" height="1164" alt="Screenshot 2026-03-31 125859" src="https://github.com/user-attachments/assets/348bcf18-e86d-4080-b443-34d8990e7809" />
+
+<img width="1775" height="1275" alt="Screenshot 2026-03-31 125928" src="https://github.com/user-attachments/assets/b70271dc-ad0d-4e7d-a15a-6de1f3f44955" />
+
+<img width="1686" height="856" alt="Screenshot 2026-03-31 125956" src="https://github.com/user-attachments/assets/8b355963-fa79-45bf-8f39-4d46b2e493d8" />
+
+
 ## Project layout
 
 ```text
